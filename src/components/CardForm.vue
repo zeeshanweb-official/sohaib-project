@@ -76,7 +76,13 @@
         Bus.$emit('inputCHanged', this.card);
       },
       addCard() {
-        Bus.$emit('addCard');
+        if (this.card.cardNumber.length == 19) {
+          Bus.$emit('addCard');
+        } else {
+          alert(
+            'card Number is less then 16 numbers, kindly place spaces carefully'
+          );
+        }
       }
     }
   };

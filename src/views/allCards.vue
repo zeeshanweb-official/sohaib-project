@@ -12,6 +12,9 @@
         ></Card>
       </div>
     </div>
+    <router-link to="/addCard">
+      <div class="btn btn-primary">Add New Card</div></router-link
+    >
   </div>
 </template>
 <script>
@@ -33,9 +36,28 @@
 </script>
 
 <style>
+  .btn {
+    border-color: #111010;
+    border: 1px solid;
+    background-color: white;
+    display: inline-block;
+    height: 50px;
+    width: 374px;
+    position: relative;
+    bottom: -400px;
+    left: 4px;
+    margin-top: 150px;
+    border-radius: 14px;
+    color: rgb(41, 39, 39);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
   .othercards {
-    position: absolute;
-    bottom: 299px;
-    left: 35%;
+    position: relative;
+    bottom: 0px;
+    margin-top: 150px;
   }
 </style>

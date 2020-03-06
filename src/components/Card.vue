@@ -2,7 +2,7 @@
   <div
     class="cardContainer cardColor"
     :class="this.card ? this.card : ''"
-    :style="index ? 'margin-top:index*100px' : ''"
+    :style="index ? marginStyle : ''"
   >
     <div class="iconGroup">
       <img alt="Noun Wifi" class="wifiLogo" src="../assets/noun_wifi.png" />
@@ -44,7 +44,6 @@
     created() {
       this.fullcard = this.CardDetails;
       this.card = this.CardDetails ? this.CardDetails.name : '';
-      console.log(this.CardDetails);
       Bus.$on('selected', name => {
         this.card = name;
       });
@@ -64,6 +63,12 @@
           localStorage.setItem('cards', JSON.stringify(arr));
         }
       });
+    },
+    computed: {
+      marginStyle() {
+        let margin = this.index * 50;
+        return `margin-top:${margin}px`;
+      }
     }
   };
 </script>
@@ -79,6 +84,7 @@
     top: 138px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    margin-bottom: 150px;
   }
 
   .cardColor {
@@ -87,7 +93,7 @@
         rgba(255, 255, 255, 0.15) 0%,
         rgba(255, 255, 255, 0) 99.07%
       ),
-      #ffae34;
+      #d4d2d0;
   }
 
   .cardLogo {
@@ -101,7 +107,7 @@
     background-color: #ffae34 !important;
   }
   .black {
-    background-color: #908e8e !important;
+    background-color: #222222 !important;
     color: white !important;
   }
   .blue {
